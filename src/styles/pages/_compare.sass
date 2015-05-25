@@ -1,0 +1,459 @@
+&.compare
+  display: block
+  padding-bottom: 0
+  height: 100%
+
+  .subsection
+    display: block
+    width: 100%
+    min-height: 100%
+
+  .mobile
+    display: none
+
+
+  h2
+    padding-top: 5rem
+    padding-bottom: 1rem
+    text-align: left
+    &.no-top
+      padding-top: 0
+
+  h2, .description
+    margin: 0 auto
+    width: 100%
+    margin-bottom: 2rem
+
+  h3
+    font-size: 1rem
+    width: 100%
+    text-align: center
+    text-transform: uppercase
+    font-weight: 600
+
+  .description
+    column-count: 2
+    column-gap: 2rem
+
+
+  .input-and-slider
+    padding-top: 2rem
+    .input-bottom
+      margin-top: -2rem
+
+  .control-container
+    width: 100%
+    padding: 1rem 0 2rem 0
+    .control-section
+      height: 100%
+      width: 50%
+      display: inline-block
+      vertical-align: top
+      padding-bottom: 1rem
+      &:first-child
+        padding-right: 2rem
+        border-right: 1px solid $bkgg
+      &:nth-child(2)
+        padding-left: 2rem
+
+      .input
+        font-size: 1.1rem
+      input
+        text-align: right
+      label
+        top: 32%
+
+
+
+
+    .parameters
+      padding-top: 2rem
+      clear: both
+      display: block
+      .parameter
+        height: 1.5rem
+        .name
+          float: left
+        .value
+          float: right
+
+    .line
+      width: calc(100% + 2rem)
+      height: 1px
+      background-color: $bkgg
+      margin: 0.5rem 0
+
+    .buy, .rent
+      height: 4rem
+      background-color: $rentbk
+      width: 50%
+      padding-top: 1rem
+      padding-right: 2rem
+      padding-left: 2rem
+      line-height: 2rem
+      font-weight: 400
+      transition: background-color 0.4s
+      &.rent
+        background-color: $buybk
+    .buy
+      text-align: right
+      float: left
+    .rent
+      text-align: left
+      float: right
+
+
+    .versus
+      position: absolute
+      border-radius: 50%
+      border: 1px solid $base2
+      width: 2rem
+      height: 2rem
+      left: 50%
+      margin-left: -1rem
+      background-color: #ffffff
+      margin-top: -3rem
+      &:before, &:after
+        width: 1px
+        position: absolute
+        height: 1rem
+        background-color: $base3
+        content: ""
+      &:before
+        margin-top: calc(-1rem - 1px)
+        margin-left: calc(1rem - 2px)
+      &:after
+        margin-top: calc(2rem - 1px)
+        margin-left: calc(1rem - 2px)
+
+      .vs
+        position: absolute
+        text-align: center
+        line-height: 2rem
+        font-weight: 600
+        font-size: 0.8rem
+        user-select: none
+        width: 2rem
+
+  .leg
+    width: 100%
+    padding-bottom: 1rem
+    .buy, .color
+      width: 1.4rem
+      height: 1rem
+      background-color: $rentbk
+      margin: 1rem
+      border: 5px solid white
+      &.rent
+        background-color: $buybk
+
+  .table-container
+    width: 50%
+    display: inline-block
+
+  .graph-container
+    width: 50%
+    display: inline-block
+    height: 60rem
+    vertical-align: top
+    #graph
+      height: 100%
+      width: 100%
+
+      .axis
+        fill: none
+        shape-rendering: crispEdges
+        font-size: 0.6rem
+        stroke: $base2
+        text
+          fill: $base2
+          stroke: none
+
+      .buy-area, .rent-area
+        opacity: 0.5
+
+      .buy-line, .rent-line
+        fill: none
+        stroke-width: 1.5px
+
+      .buy-area
+        fill: $rent
+      .rent-area
+        fill: $buy
+
+      .rent-line
+        stroke: $buyline
+      .buy-line
+        stroke: $rentline
+
+  .future-table
+    width: 100%
+    color: $base0
+    text-align: right
+
+    > tbody > tr
+      height: 1.5rem
+      padding-right: 1rem
+      cursor: pointer
+
+      td
+        padding-right: 1rem
+        border-right: 1px solid $bkg
+        &:first-child
+          text-align: center
+          border-right: none
+          width: 4rem
+
+      &:nth-child(2n)
+        border-top: 1px solid $bkg
+        border-bottom: 1px solid $bkg
+        td
+          background-color: $bkb
+          &:first-child
+            background-color: transparent
+
+      &.sub-table
+        padding: 0
+        border: none
+        td
+          padding: 0
+          border: none
+        &.first
+          .sub-table-container
+            border-top: none
+        &:hover
+          background-color: transparent
+          > td
+            background-color: transparent
+
+      &:nth-child(2)
+        border-top: 1px solid $bkg
+
+      &:last-child
+        border-bottom: none
+
+      &.under-year
+        border-bottom: none
+
+      &.over-year
+        border-top: none
+
+      &:hover
+        background-color: $bk
+
+      &.header:hover
+        background-color: transparent
+        > td
+          background-color: transparent
+
+
+    .sub-table-container
+      width: 200%
+      background-color: rgba(255, 255, 255, 0.8)
+      border-top: 1px solid $bkg
+      border-bottom: 1px solid $bkg
+      z-index: 10
+      position: relative
+      padding: 1rem 0
+
+      .sub-table-year
+        padding-bottom: 2rem
+        font-weight: 400
+        text-align: left
+        font-size: 1.2rem
+
+      .year-table-header
+        width: 100%
+        text-align: center
+        font-weight: 600
+        padding-bottom: 1rem
+
+
+      .year-table
+        width: 100%
+        tr
+          height: 1.5rem
+          padding-right: 1rem
+
+          td
+            padding-right: 1rem
+            border-right: 1px solid $bkg
+            background-color: transparent
+            width: auto
+            text-align: right
+            &:first-child
+              text-align: center
+              border-right: none
+              background-color: transparent
+
+          &:nth-child(2n)
+            border-top: 1px solid $bkg
+            border-bottom: 1px solid $bkg
+            td
+              background-color: $bkb
+              &:first-child
+                background-color: transparent
+
+          &:nth-child(2)
+            border-top: 1px solid $bkg
+
+          &:last-child
+            border-bottom: none
+            td
+              background-color: transparent
+              font-weight: 600
+
+      .year-svg-header
+        margin-top: -2rem
+        width: 100%
+        text-align: center
+        font-weight: 600
+        padding-bottom: 1rem
+
+      .mortgage-table-container
+
+        .legend
+          text-align: left
+          display: table
+          border-collapse: collapse
+          .item
+            display: table-row
+            .td
+              padding-left: 0.5rem
+              display: table-cell
+              &.color
+                font-weight: 600
+                color: $mortgage
+              &.color.owner
+                color: $buy
+              &.price
+                text-align: right
+
+        svg#mortgage-info
+          width: 160px
+          height: 160px
+
+          path.slice
+            fill: $buy
+            &.mortgage
+              fill: $mortgage
+
+          text.home-worth
+            font-weight: 600
+
+  .additional
+    h3
+      text-align: left
+    .param
+      width: 50%
+      display: inline-block
+      vertical-align: top
+      padding-bottom: 4rem
+      &:nth-child(2n+1)
+        padding-right: 1rem
+      &:nth-child(2n)
+        padding-left: 1rem
+
+      .input-and-slider
+        padding-bottom: 1rem
+      .desc
+        font-size: 0.9rem
+        line-height: 1.5rem
+
+  .social
+    padding-bottom: 2rem
+    .social-button
+      display: inline-block
+      margin-left: 1rem
+      &.facebook
+        position: relative
+        top: -5px
+      &:first-child
+        margin-left: 0
+
+  .social-description
+    a
+      color: $blue3
+
+@media (max-width : 960px) and (min-width: 0)
+  &.compare
+    .subsection
+      padding: 0 1rem
+
+    .mobile
+      display: block
+
+    .non-mobile
+      display: none
+
+    .description
+      column-count: 1
+      column-gap: 0rem
+
+    .control-container
+      .control-section
+        width: 100%
+        display: block
+
+        &:first-child
+          padding-right: 0
+          border-right: none
+        &:nth-child(2)
+          padding-left: 0
+
+      .parameters
+        .line
+          width: 100%
+
+      .monthly-cost
+        margin-top: 2rem
+
+    .yearly-container
+      width: calc(100vw - 2rem)
+      margin-left: calc((100vw - 34rem) / -2)
+
+    h2
+      display: block
+
+    h3
+      text-align: left
+      padding-bottom: 0
+
+    .additional
+      .param
+        width: 100%
+        display: inline-block
+
+        &:nth-child(2n+1)
+          padding-right: 0
+          padding-bottom: 0
+        &:nth-child(2n)
+          padding-left: 0
+
+
+
+@media (max-width: 576px) and (min-width: 0)
+
+  &.compare
+    .control-container
+      .buy, .rent
+        line-height: 1rem
+        font-size: 0.9rem
+
+    h3
+      margin-bottom: 0
+      padding-bottom: 0
+
+    .control-container .control-section label
+      top: -1rem
+      padding-left: 0
+
+    .yearly-container
+      width: auto
+      margin-left: 0
+
+      .table-container
+        width: 100%
+
+      .graph-container
+        display: none

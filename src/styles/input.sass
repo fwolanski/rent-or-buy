@@ -1,0 +1,84 @@
+@import colors.sass
+
+.input
+  position: relative
+
+  .input-top
+    display: none
+
+  input
+    padding: 0.5rem 0 0 0
+    display: block
+    width: 100%
+    border: none
+    // border-bottom: 1px solid $base2
+    background-color: transparent
+
+  input:focus
+    outline: none
+
+  label
+    color: $base2
+    font-weight: 300
+    position: absolute
+    pointer-events: none
+    left: 0
+    top: 32%
+    transition: 0.2s ease all
+
+
+  input:focus ~ label, input:valid ~ label
+    top: -1.2rem
+    color: $blue4
+
+
+  .bar
+    position: relative
+    display: block
+    width: 100%
+
+  .bar:before, .bar:after
+    content: ''
+    height: 2px
+    width: 0
+    bottom: 0
+    position: absolute
+    background: $blue4
+    transition: 0.2s ease all
+
+  .bar:before
+    left: 50%
+
+  .bar:after
+    right: 50%
+
+  input:focus ~ .bar:before, input:focus ~ .bar:after
+    width: 50%
+
+  &.disabled
+    input
+      color: transparent
+
+@media (max-width: 576px) and (min-width: 0)
+
+  .input
+
+    input
+      border-bottom: 1px solid $bkg
+      // background-color: white
+      padding-left: 1rem
+      padding-bottom: 0.5rem
+
+    label
+      top: 25%
+      padding-left: 1rem
+
+    input:focus, input:valid
+      // border-top: 1px solid $bkg
+      margin-top: 2.0rem
+
+    input:focus ~ label, input:valid ~ label
+      font-weight: 600
+      top: -1.5rem
+      font-size: 0.8rem
+      color: $base0

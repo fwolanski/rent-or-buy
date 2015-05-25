@@ -1,0 +1,217 @@
+&.savings
+  .subsection
+
+    .savings-button-container
+      text-align: center
+
+    .savings-button
+      margin-bottom: 3rem
+
+    .group
+      padding: 1rem 0 5rem 0
+      width: 100%
+
+      .text
+        position: relative
+        width: 100%
+        text-align: right
+        &:before
+          position: absolute
+          left: 0
+          bottom: 0
+          content: ''
+          height: 1px
+          width: 100%
+          // background-color: $base2
+
+      .savings-input
+        width: 100%
+        .savings-input-item
+          width: 50%
+          vertical-align: bottom
+          display: inline-block
+          font-size: 1rem
+
+          .sum-format
+            position: relative
+
+          // &:nth-child(1)
+          //   .input input:focus ~ label, input:valid ~ label
+          //     font-weight: 600
+
+          // &:nth-child(4n+1)
+          //   width: 37%
+
+          // &:nth-child(4n+2)
+          //   width: 30%
+
+          // &:nth-child(4n+3)
+          //   width: 10%
+          //   .input
+          //     input, label
+          //       padding-left: 0.5rem
+
+          // &:nth-child(4n)
+          //   width: 23%
+
+          // &:nth-child(5)
+          //   margin-top: 2rem
+
+
+    .table-wrapper
+      max-height: 0
+      overflow: hidden
+      transition: all 0.4s ease-in
+
+      &.active
+        max-height: 15rem
+
+      .table-disclaimer
+        font-size: 0.7rem
+        text-align: right
+        padding-top: 0.3rem
+
+    .table
+      font-size: 0.9rem
+      margin-top: 2rem
+      width: 100%
+      color: $base0
+      text-align: right
+
+      .header
+        color: $base0
+
+      .money
+        white-space: nowrap
+        width: 25%
+
+      .total
+        font-weight: 600
+
+      .income-header
+        display: inline
+
+      .year
+        width: 5rem
+        text-align: center
+
+      tr
+        height: 1.5rem
+        padding-right: 1rem
+
+        td
+          padding-right: 1rem
+          border-right: 1px solid $bkg
+
+          &.year
+            border-right: none
+
+        &:nth-child(2n+1)
+          border-top: 1px solid $bkg
+          border-bottom: 1px solid $bkg
+          td
+            background-color: $bkb
+            &:first-child
+              background-color: transparent
+
+        &:first-child
+          &.header
+            border-top: none
+            td
+              text-align: center
+              background-color: transparent
+
+        &:nth-child(2)
+          border-top: 1px solid $bkg
+
+
+
+@media (max-width: 576px) and (min-width: 0)
+
+  &.savings
+    .subsection
+      .table-wrapper
+        min-width: 100%
+        overflow: scroll
+        &.active
+          border-top: 1px solid $bkg
+          max-height: 16rem
+
+      .group
+        padding: 0
+        border-top: 1px solid $bkg
+        border-bottom: 1px solid $bkg
+        background-color: $bk
+        margin-bottom: 2rem
+        margin-left: -1rem
+        width: 100vw
+
+
+        .savings-input
+          width: 100%
+          background-color: $bk
+
+          .text
+            padding: 0.5rem 0 0.5rem 1rem
+            text-align: left
+            &:before
+              background-color: $bkg
+
+          .savings-input-item
+            display: block
+            margin-bottom: 0
+            width: 100%
+
+            &:nth-child(1)
+              width: 100%
+
+            &:nth-child(4n+1)
+              width: 100%
+
+            &:nth-child(4n+2)
+              width: 100%
+
+            &:nth-child(4n+3)
+              display: inline-block
+              width: 50%
+              .input
+                input, label
+                  padding-left: 1rem
+
+            &:nth-child(4n)
+              display: inline-block
+              width: 50%
+
+            &:nth-child(5)
+              margin-top: 0rem
+
+            &.with-border
+              border-bottom: 1px solid $bkg
+
+      .table
+        margin-top: 0
+
+        tr
+          height: 2rem
+
+          .header
+            padding-left: 1rem
+            .year
+              padding-left: 0.5rem
+
+          td
+            padding-right: 0.5rem
+            &:last-child
+              border-right: none
+
+        .no-mobile
+          display: none
+
+        .income-header
+          display: none
+
+        .income-header-mobile
+          display: inline
+
+
+

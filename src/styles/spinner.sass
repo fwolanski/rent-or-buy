@@ -1,0 +1,33 @@
+.spinner
+  text-align: center
+  padding-top: 50vh
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  background-color: #ffffff
+  z-index: 10
+
+.spinner > div
+  width: 18px
+  height: 18px
+  background-color: #333
+
+  border-radius: 100%
+  display: inline-block
+  animation: bouncedelay 1.4s infinite ease-in-out
+  animation-fill-mode: both
+
+
+.spinner .bounce1
+  animation-delay: -0.32s
+
+.spinner .bounce2
+  animation-delay: -0.16s
+
+@keyframes bouncedelay
+  0%, 80%, 100%
+    transform: scale(0.0)
+  40%
+    transform: scale(1.0)

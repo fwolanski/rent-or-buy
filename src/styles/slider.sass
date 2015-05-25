@@ -1,0 +1,108 @@
+@import colors.sass
+
+$handle-height: 0.5rem
+$handle-width: 1rem
+
+.slider
+  position: relative
+  width: 100%
+  margin-top: calc(2rem - 1px)
+  padding-bottom: 2rem
+
+  .slider-handle
+    position: absolute
+    height: $handle-height / 2 + 0.1rem
+    width: $handle-width
+    background-color: $blue3
+    top: -$handle-height / 2 + 0.1rem
+    cursor: pointer
+    z-index: 1
+    &:before
+      border-top: $handle-height solid $blue3
+      border-left: ($handle-width / 2) solid transparent
+      border-right: ($handle-width / 2) solid transparent
+      content: ""
+      height: 0
+      left: 0
+      position: absolute
+      top: $handle-height / 2 + 0.1rem
+      width: 0
+
+    .scale-handle-text
+      position: absolute
+      top: 1rem
+      font-size: 1rem
+
+      .scale-handle-measure
+        white-space: nowrap
+
+  &.active
+    .slider-handle
+      background-color: $blue5
+      &:before
+        border-top: $handle-height solid $blue5
+
+
+  .slider-scale
+    position: absolute
+    top: 1rem
+    left: $handle-width / 2
+    right: $handle-width / 2
+    text-align: center
+    opacity: 1
+    transition: 0.4s opacity
+
+    .scale-item
+      position: absolute
+      font-size: 0.6rem
+      width: 3rem
+      margin-left: -1.5rem
+      color: $base2
+
+
+      &:before
+        content: ''
+        position: absolute
+        top: -0.5rem
+        width: 1px
+        height: 0.5rem
+        background-color: $base3
+        left: 1.5rem
+
+      .scale-item-text
+        transition: opacity 0.2s ease-in
+        opacity: 1
+
+      &.hidden
+        .scale-item-text
+          opacity: 0
+
+      &.covered
+        .scale-item-text
+          opacity: 0
+
+
+  .slider-from
+    position: absolute
+    top: 0
+    left: 0
+    background-color: $blue3
+    height: 1px
+
+  .slider-to
+    position: absolute
+    top: 0
+    right: 0
+    background-color: $bkg
+    height: 1px
+
+
+  &.disabled
+    .slider-handle
+      visibility: hidden
+    .slider-from
+      background-color: $base2
+    .slider-to
+      background-color: $base2
+    .slider-scale
+      opacity: 0

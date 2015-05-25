@@ -1,0 +1,179 @@
+@import helpers.sass
+@import colors.sass
+
+html
+  font-size: 16px
+  box-sizing: border-box
+  -webkit-font-smoothing: antialiased
+  text-rendering: optimizeLegibility
+
+
+*, *:before, *:after
+  box-sizing: inherit
+
+body
+  font-family: 'fira'
+  font-weight: 300
+
+@import spinner.sass
+@import header.sass
+@import nav.sass
+@import input.sass
+@import dropdown.sass
+@import button.sass
+@import slider.sass
+
+
+article
+  position: absolute
+  width: 100%
+  height: 100%
+  overflow: hidden
+  background-color: $bk
+  .section-bk
+    position: absolute
+    height: 100%
+    width: 100%
+    transition: transform 0.6s ease
+    background-color: #ffffff
+    &.section-welcome
+      transform: translateX(100%)
+    &.section-people
+      transform: translateX(calc(50% - 6rem))
+    &.section-income
+      transform: translateX(calc(-50% + 6rem))
+    &.section-savings
+      transform: translateX(calc(50% - 6rem))
+
+  .section-wrapper
+    position: absolute
+    height: 100%
+    width: 100%
+    overflow-x: hidden
+    overflow-y: scroll
+    pointer-events: none
+
+    &.active
+      pointer-events: all
+
+
+section
+  width: 60rem
+  margin: 0 auto
+  flex-wrap: wrap
+  align-items: stretch
+  display: flex
+  pointer-events: none
+  padding: 0
+
+  .subsection
+    min-height: 100vh
+    padding-top: 8rem
+    padding-right: 2rem
+    padding-left: 2rem
+    padding-bottom: 5rem
+    transition: transform 0.6s ease
+    transform: translateZ(0)
+
+    &:first-child
+      width: calc(50% - 6rem)
+      transform: translateY(-100%)
+    &:last-child
+      width: calc(50% + 6rem)
+      transform: translateY(100%)
+
+  &.active
+    pointer-events: all
+    .subsection
+      height: auto
+      &:first-child,
+      &:last-child
+        transform: translateY(0)
+
+
+  @import pages/_home.sass
+  @import pages/_people.sass
+  @import pages/_income.sass
+  @import pages/_savings.sass
+  @import pages/_compare.sass
+
+h2
+  font-size: 2rem
+  font-weight: 300
+  margin-top: 0
+  margin-bottom: 2rem
+  line-height: 2.5rem
+
+.description
+  font-weight: 300
+  font-size: 1rem
+  line-height: 1.6rem
+
+p
+  margin: 1rem 0
+  &:first-child
+    margin-top: 0
+  &:last-child
+    margin-bottom: 0
+
+@media (max-width: 960px) and (min-width: 0)
+
+  article
+    background: #ffffff
+    position: relative
+    .section-bk
+      display: none
+    .section-wrapper
+      position: relative
+      padding: 0
+      height: 0
+      &.active
+        height: auto
+        padding-top: 5rem
+        padding-bottom: 2rem
+
+  section
+    width: 34rem
+    .subsection
+      min-height: 0
+      height: auto
+      width: 100%
+      padding: 1rem
+
+
+  .section-wrapper
+    section
+      .subsection
+        &:first-child
+          width: 100%
+          transform: translate(100vw,0)
+        &:last-child
+          width: 100%
+          transform: translate(100vw,0)
+
+
+  .section-wrapper.active
+    section
+      .subsection
+        &:first-child
+          transform: translate(0,0)
+        &:last-child
+          transform: translate(0,0)
+
+  .section-wrapper.past
+    section
+      .subsection
+        &:first-child
+          transform: translate(-100vw,0)
+        &:last-child
+          transform: translate(-100vw,0)
+
+  h2
+    display: none
+
+@media (max-width: 576px) and (min-width: 0)
+
+  section
+    width: 100%
+    margin: 0
+    left: 0

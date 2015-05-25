@@ -1,0 +1,117 @@
+@import colors.sass
+
+header
+  height: 2rem
+  padding: 2rem
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 1
+
+  .logo
+    display: block
+    text-decoration: none
+    width: 2rem
+    height: 2rem
+    background-color: $base0
+    cursor: pointer
+    &:after
+      content: "FW"
+      color: #fff
+      font-family: "fira"
+      font-weight: 700
+      font-size: 1rem
+      line-height: 2.1rem
+      text-transform: uppercase
+      padding-left: 0.35rem
+
+
+  .mobile-title
+    font-weight: 600
+    display: none
+    text-align: center
+    font-size: 1.2rem
+    margin: -1.75rem 2rem 0 2rem
+
+  .mobile-back-navigation
+    cursor: pointer
+    display: none
+    text-decoration: none
+    width: 2rem
+    height: 4rem
+    margin-top: -2rem
+    &:before
+      content: "\f104"
+      font: normal normal normal 14px/1 FontAwesome
+      text-rendering: auto
+      font-size: 1.2rem
+      position: absolute
+      top: 1.5rem
+      left: 1.5rem
+    &:after
+      content: ''
+      position: absolute
+      top: 0
+      left: 3.5rem
+      height: 4rem
+      width: 2px
+      background-color: $bkg
+      border-right: 1px solid $bk
+
+
+  .mobile-forward-navigation
+    cursor: pointer
+    display: none
+    text-decoration: none
+    width: 2rem
+    height: 4rem
+    margin-top: -2rem
+    float: right
+    &:before
+      content: "\f105"
+      font: normal normal normal 14px/1 FontAwesome
+      text-rendering: auto
+      font-size: 1.2rem
+      position: absolute
+      top: 1.5rem
+      right: 1.5rem
+    &:after
+      content: ''
+      position: absolute
+      top: 0
+      right: 3.5rem
+      height: 4rem
+      width: 2px
+      background-color: $bkg
+      border-right: 1px solid $bk
+
+
+@media (max-width : 1056px) and (min-width: 0)
+  header
+    padding: 1rem
+    height: 4rem
+
+@media (max-width : 1000px) and (min-width: 961px)
+  header
+    display: none
+
+@media (max-width : 960px) and (min-width: 0)
+  header
+    width: 100%
+    background-color: $tbk
+    border-bottom: 1px solid $bkg
+
+    .logo.mobile-hide
+      display: none
+
+    .nav
+      display: none
+
+    .mobile-back-navigation
+      display: block
+
+    .mobile-forward-navigation
+      display: block
+
+    .mobile-title
+      display: block

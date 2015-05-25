@@ -1,0 +1,64 @@
+@import colors.sass
+@import helpers.sass
+
+
+.nav
+  text-align: center
+  pointer-events: none
+  padding-left: 0.6rem
+  padding-top: 1rem
+
+  ul
+    position: relative
+    margin: 0
+    padding: 0
+    list-style: none
+    cursor: default
+    @extend .noselect
+    pointer-events: all
+
+    li
+      position: relative
+      width: 3.5rem
+      height: 2rem
+      cursor: pointer
+
+      .circle-container
+        position: relative
+        margin: 1rem 0.8rem 1rem 0
+        width: 0.8rem
+        height: 0.8rem
+
+      a
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        outline: none
+        border-radius: 50%
+        background-color: $base1
+        text-indent: -999em
+        cursor: pointer
+        position: absolute
+        background-color: transparent
+
+        box-shadow: inset 0 0 0 2px $base0
+        transition: box-shadow 0.3s ease
+
+        &:focus
+          outline: none
+
+        &:hover, &:focus
+          box-shadow: inset 0 0 0 2px $base2
+
+      &.current
+        a
+          box-shadow:  inset 0 0 0 0.5rem $base0
+
+      &.past
+        a
+          box-shadow: inset 0 0 0 0.5rem $base2
+
+      &:only-of-type
+        display: none
+

@@ -1,0 +1,149 @@
+&.income
+  flex-direction: row-reverse
+  .subsection
+
+    .group
+      padding: 1rem 0 2rem 0
+
+    .income-button-container
+      text-align: center
+      margin-top: 2rem
+
+    .income-button
+      margin-bottom: 3rem
+
+    .income-input
+      width: 100%
+
+      .income-input-item
+        width: 11rem
+        vertical-align: bottom
+        display: inline-block
+        font-size: 1rem
+        &:first-child
+          width: 10rem
+          .input input:focus ~ label, input:valid ~ label
+            font-weight: 600
+
+
+    .table-wrapper
+      max-height: 0
+      overflow: hidden
+      transition: all 0.4s ease-in
+
+      &.active
+        max-height: 10rem
+
+    .table
+      font-size: 0.9rem
+      margin-top: 2rem
+      width: 100%
+      color: $base0
+      text-align: right
+
+      .header
+        color: $base0
+
+      .money
+        white-space: nowrap
+        width: 11rem
+
+      .income-header
+        display: inline
+
+      .income-header-mobile
+        display: none
+
+      tr
+        height: 1.5rem
+        padding-right: 1rem
+
+        td
+          padding-right: 1rem
+          border-right: 1px solid $bkg
+          &:first-child
+            text-align: left
+            border-right: none
+
+        &:nth-child(2n)
+          border-top: 1px solid $bkg
+          border-bottom: 1px solid $bkg
+          td
+            background-color: $bkb
+            &:first-child
+              background-color: transparent
+
+        &:nth-child(2)
+          border-top: 1px solid $bkg
+
+        &:last-child
+          border-bottom: none
+          td
+            background-color: transparent
+            font-weight: 600
+            border-top: 1px solid $bkg
+            &:first-child
+              font-weight: 300
+
+@media (max-width: 576px) and (min-width: 0)
+
+  &.income
+    .subsection
+      .group
+        padding: 0
+        border-top: 1px solid $bkg
+        border-bottom: 1px solid $bkg
+        background-color: $bk
+        margin-bottom: 2rem
+        margin-left: -1rem
+        width: 100vw
+
+      .table-wrapper
+        &.active
+          border-top: 1px solid $bkg
+          max-height: 15rem
+      .income-input
+        width: 100%
+        background-color: $bk
+
+        .income-input-item
+          display: block
+          margin-bottom: 0
+          width: 100%
+
+          &:nth-child(1)
+            display: block
+            margin-bottom: 0
+            width: 100%
+
+          &:nth-child(2)
+            border-bottom: 1px solid $bkg
+
+
+      .table
+        margin-top: 0
+
+        tr
+          height: 2rem
+
+          .header
+            padding-left: 1rem
+
+          td
+            padding-right: 0.5rem
+            &:last-child
+              border-right: none
+
+
+        .income-header
+          display: none
+
+        .income-header-mobile
+          display: inline
+
+        .header
+          width: 33%
+
+        .money
+          width: 33%
+

@@ -1,0 +1,19 @@
+@import colors.sass
+
+.button
+  font-weight: 600
+  color: $blue4
+  display: inline-block
+  padding: 1rem
+  cursor: pointer
+  user-select: none
+  transition: color 0.4s ease
+
+  &:hover
+    color: $blue5
+
+  &.selected
+    color: $blue5
+
+  &.not-selected
+    color: $base3
