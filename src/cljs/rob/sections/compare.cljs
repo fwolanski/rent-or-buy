@@ -149,5 +149,5 @@
              [:a {:href "https://github.com/omcljs/om" :target "_blank"} "om"] ", a thin wrapper over "
              [:a {:href "https://facebook.github.io/react/" :target "_blank"} "Facebook's React"]
              ". The source is available "
-             [:a {:href "https://github.com/fwolanski/filipwolanski.com/tree/master/pages/rent-or-buy" :target "_blank"} "here"]
+             [:a {:href "https://github.com/fwolanski/rent-or-buy/" :target "_blank"} "here"]
              " on Github." ] ] ])))))
