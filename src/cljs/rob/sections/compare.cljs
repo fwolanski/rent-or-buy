@@ -137,7 +137,7 @@
                    }]
               ]
              [:div {:class "social-button github"}
-              [:iframe {:src "https://ghbtns.com/github-btn.html?user=fwolanski&repo=filipwolanski.com&type=star"
+              [:iframe {:src "https://ghbtns.com/github-btn.html?user=fwolanski&repo=rent-or-buy&type=star"
                         :frameBorder "0"
                         :scrolling "0"
                         :width "170px"
@@ -145,9 +145,11 @@
            [:div {:class "clear"}]
 
             [:div {:class "social-description"}
-             "This app is build with Clojurescript and "
+             "This tool is build with Clojurescript and "
              [:a {:href "https://github.com/omcljs/om" :target "_blank"} "om"] ", a thin wrapper over "
              [:a {:href "https://facebook.github.io/react/" :target "_blank"} "Facebook's React"]
-             ". The source is available "
+             ". It uses "
+             [:a {:href "http://d3js.org/" :target "_blank"} "d3"] " to render the graph. "
+             " The source is available "
              [:a {:href "https://github.com/fwolanski/rent-or-buy/" :target "_blank"} "here"]
              " on Github." ] ] ])))))
